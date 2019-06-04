@@ -1,10 +1,50 @@
-# You have to write a program that, when run, asks the user to input some text. It can be a phrase, a sentence, or multiple sentences. After it is entered, your program will let the user know if it is a palindrome or not. Use "is a palindrome" and "is not a palindrome" in your output in order for the tests to pass.
+# reference example:
 
-# Letter casing and punctuation do not matter when testing a palindrome. All of the following are valid palindromes:
+# sentence = "Making plots and visualizations is one of the most important tasks in data analysis."
+# all_letters = "abcdefghijklmnopqrstuvwxyz"
+# found_letters = []
+# for letter in sentence.lower():
+#     if letter in all_letters and letter not in found_letters:
+#         found_letters.append(letter)
+        
+# print(found_letters)
 
-# stunt nuts
-# Lisa Bonet ate no basil.
-# A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal: Panama!
-# Doc, note, I dissent. A fast never prevents a fatness. I diet on cod.
+# potentially a way to remove spacing and punctuation:
+
+# def clean_text(text):
+    # """
+    # Given a text, return the text with no spaces or punctuation and all lowercased.
+    # """
+    # new_text = ""
+    # text = text.lower()
+    # for character in text:
+    #     if character.isalpha():
+    #         new_text = new_text + character
+    # return new_text
+    # found in: question of the day in string methods notebook
+    
+
+    # reverses the text
+    # greeting = "Hello there!"
+    # greeting[::-1]
+    # '!ereht olleH'
+
+
+user_input = str(input("Enter a phrase or sentence to check if it is a palindrome. "))
+print(user_input)
+
+def is_palindrome(word):
+    if word[0] == word[-1]:
+        word = word[1:-1]
+        print(word)
+        if len(word) >= 2:
+            is_palindrome(word)
+        else:
+            print("This is a palindrome.")
+    else:
+        print("This is not a palindrome.")
+
+is_palindrome(user_input)
+
 
 
