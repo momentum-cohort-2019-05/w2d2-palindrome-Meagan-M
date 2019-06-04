@@ -29,7 +29,7 @@
     # greeting[::-1]
     # '!ereht olleH'
 
-
+import re
 user_input = str(input("Enter a phrase or sentence to check if it is a palindrome. "))
 print(user_input)
 
