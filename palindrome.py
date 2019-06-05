@@ -31,8 +31,11 @@
 
 import re
 user_input = str(input("Enter a phrase or sentence to check if it is a palindrome. "))
-print(user_input)
+user_input_cleaned = re.sub(r'[^A-Za-z]', "", user_input)
 
+# print(user_input)
+# all_letters = "abcdefghijklmnopqrstuvwxyz"
+# found_letters = []
 def is_palindrome(word):
     if word[0] == word[-1]:
         word = word[1:-1]
